@@ -1,0 +1,58 @@
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #e6e6e6;
+}
+
+.nav > li.active > a {
+  color: #03a9f4;
+  background-color: rgba(0, 0, 0, 0.1)
+}
+
+.nav > li > a:hover {
+  color: #03a9f4;
+  background-color: rgba(0, 0, 0, 0.1)
+}
+
+.nav > li  > .nav-sub {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.2s;
+}
+
+.nav-sub li a {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+
+}
+
+.nav > li  a .text {
+  display: block;
+}
+
+.nav > li  a .text-active {
+  display: none;
+}
+
+.nav-sub li.active a {
+  color: #03a9f4;
+  background-color: rgba(0, 0, 0, 0.1)
+}
+
+.nav > li.active > .nav-sub {
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.1)
+
+}
+
+.nav > li.active a .text {
+  display: none;
+}
+
+.nav > li.active a .text-active {
+  display: block;
+}

@@ -1,0 +1,44 @@
+
+.app {
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  background: url(../img/bg/blue-bg.png) no-repeat  center/cover;
+
+}
+
+.app-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  color: #ffffff;
+  background-color: @brand-primary;
+  overflow: hidden;
+&.height0 {
+  height: 0;
+}
+}
+
+.app-content {
+  position: absolute;
+  top: 80px;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: #006dcc;
+&.height0 {
+  top:0;
+}
+
+}
+
+.app-content-body {
+  float: left;
+  width: 100%;
+
+}
+
+
