@@ -11,11 +11,11 @@ angular.module('app')
                 $rootScope.$stateParams = $stateParams;
                 $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
 
-                    if(toState.name === 'app.page1'){
+                    if(toState.name === 'app.overview'){
 
-                        $rootScope.$broadcast('index',true);
+                        $rootScope.$broadcast('overview',true);
                     }else {
-                        $rootScope.$broadcast('index',false);
+                        $rootScope.$broadcast('overview',false);
                     }
                 })
             }
@@ -26,7 +26,7 @@ angular.module('app')
         ['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider
-                    .otherwise('/app/page1');
+                    .otherwise('/app/overview/');
                 $stateProvider
                     .state('access', {
                         url: '/access',
@@ -44,9 +44,16 @@ angular.module('app')
                         url: '/app',
                         templateUrl: 'src/tpl/app.html?v=201801051554'
                     })
-                    .state('app.page1', {
-                        url: '/page1',
-                        templateUrl: 'src/tpl/page1.html'
+                    .state('app.overview', {
+                        url: '/overview/:id',
+                        templateUrl: 'src/tpl/overview.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load('src/js/controllers/overview.js');
+                                }]
+                        }
+
                     })
                     .state('app.page2', {
                         url: '/page2',
@@ -60,6 +67,8 @@ angular.module('app')
                         url: '/page4',
                         templateUrl: 'src/tpl/page4.html'
                     })
+
+
 
             }
         ]

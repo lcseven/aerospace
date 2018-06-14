@@ -1,0 +1,382 @@
+.overview-wrap {
+  position: relative;
+  height: 100vh;
+}
+.overview-body {
+  position: absolute;
+  top:70px;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.overview-body.c2 {
+  background-color: #00b3ee;
+}
+.overview-flt {
+  float: left;
+
+}
+
+.overview-frt {
+  float: right;
+
+}
+
+
+.overview-center {
+  margin: 0 300px;
+  height:100vh;
+  //background-color: #00b3ee;
+}
+.overview-frt,
+.overview-flt {
+  width: 300px;
+  //height:100%;
+  //margin-top: -50px;
+  //background-color: #1c2b36;
+}
+.overview-item {
+  position: relative ;
+  &:before {
+    display: block;
+    content: attr(data-name);
+    position: absolute;
+    left:100px;
+    top:-25px;
+    font-size: 16px;
+    color:@brand-warning;
+  }
+}
+.overview-item-header {
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  .vertical-three-colors(#0E2678,#0B2E83,70%,#0C3084);
+
+   &.p-l-lg {
+     padding-left: 80px;
+   }
+  &:before,
+  &:after{
+    //display: block;
+    content:'';
+    position: absolute;
+    left:0;
+    right:0;
+    height:1px;
+    background: url(../img/border.png) center/contain no-repeat;
+  }
+  &:before {
+    top:0;
+  }
+  &:after {
+     bottom:0;
+  }
+  & > .iconfont,
+  & > .text {
+    font-size: 18px;
+    .text-white-shadow;
+  }
+  & > .text {
+    margin-left: 10px;
+  }
+}
+.overview-item-wrap {
+  height: 30vh;
+  min-height: 200px;
+  position: relative;
+}
+.overview-item-content {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin: auto;
+
+
+  height:200px;
+}
+.overview-header {
+  position: relative;
+  height: 120px;
+  .vertical(#0b2f7d,#0b3088);
+  &:before {
+    position: relative;
+    display: block;
+    content:'';
+    height: 120px;
+    bottom:0;
+    left:0;
+    background: url(../img/header.png) center/contain no-repeat;
+    z-index: 2;
+  }
+  &:after {
+    position: absolute;
+    display: block;
+    content:'';
+    top:70px;
+    left:0;
+    right:0;
+    bottom:0;
+    .vertical-three-colors(#0E2678,#0B2E83,70%,#0C3084);
+
+  }
+  > .project {
+    color:@brand-warning;
+    float: right;
+    margin-right: 30px;
+    margin-top: 40px;
+    font-size: 16px;
+  }
+}
+
+.text-white-shadow {
+  text-shadow: 1px 1px 8px #fff;
+}
+
+// manage
+
+.manage-ul {
+  .clear;
+
+  & > .manage-li {
+    width: 50%;
+    float: left;
+    text-align: center;
+    & > .manage-value {
+      margin: 10px  0 0 0;
+      color:@brand-info;
+    }
+    & > .manage-p {
+      margin: 5px 0 0 0;
+    }
+  }
+}
+
+// salary
+
+.overview-item-content {
+  > .salary {
+    padding-left: 30px;
+    margin: 10px 0 0 0;
+  }
+
+}
+// power
+.radio-wrapper {
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:20px;
+  //background-color: #0b1014;
+  &.bg {
+    position: fixed;
+    bottom:10px;
+    left:45%;
+    right:45%;
+    border-radius: 10px;
+    background-color: rgba(20,20,20,.6);
+  }
+}
+
+.radio-wrapper.bg >.radio-item:first-child {
+   text-align: right;
+ }
+.radio-wrapper.bg >.radio-item:last-child {
+  text-align: left;
+}
+.radio-item {
+
+  float: left;
+  width: 50%;
+  height: 20px;
+  position: relative;
+  text-align: center;
+}
+.radio-item > .radio-input {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100% ;
+  opacity:0;
+  z-index: 1;
+  cursor: pointer;
+}
+.radio-item > .radio-label {
+  line-height: 20px;
+  color:#fff;
+  position: relative;
+  font-size: 10px;
+
+  &:before{
+    position: absolute;
+    top:5px;
+    left:-20px;
+    content: '';
+    width: 10px;
+    height:10px;
+    border-radius: 10px;
+    background-color:#fff;
+  }
+  &.body1,
+  &.body2 {
+
+    font-size: 0;
+  }
+
+  &.body1:before {
+     top:-10px;
+     left:auto;
+     right: 20px;
+   }
+
+  &.body2:before {
+    top:-10px;
+    left: 20px;
+  }
+}
+.radio-input:checked + .radio-label {
+  color:@brand-info;
+}
+.radio-input:checked + .radio-label:before{
+  background-color:@brand-info;
+}
+
+// 节能环保
+
+.env-data {
+  float: left;
+  width: 50%;
+  height:50%;
+
+}
+.env-img-div {
+  float: left;
+  position: relative;
+  width: 50%;
+  padding-top: 50%;
+  margin-top: 12%;
+}
+.env-img {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+.bfc {
+  overflow: hidden;
+}
+.env-bfc {
+  padding: 3% 0;
+  text-align: center;
+  & > .value-wrap {
+    position: relative;
+    line-height: 40px;
+    color:@brand-info;
+
+     &:before {
+       position: absolute;
+       content:'';
+       left:10px;
+       right:10px;
+       height:1px;
+       bottom:0;
+       background-color: #fff;
+
+     }
+    > .value {
+
+       font-size:24px ;
+    }
+  }
+
+  &>.text {
+    line-height: 20px;
+    font-size: 10px;
+  }
+}
+
+// 告警信息
+
+.overview-item-content{
+  & >.radio-control-content {
+      position: absolute;
+      width: 100%;
+      top:0;
+      left:0;
+      height:180px;
+      //background-color: #00b3ee;
+  }
+  & >.radio-control-content.second {
+    //background-color: #eeec21;
+  }
+}
+
+.da-rank-ul > .da-rank-li {
+  margin: 10px 0;
+  padding: 0 10px 0 0 ;
+
+}
+
+.da-rank-ul > .da-rank-li:last-child {
+  margin-bottom: 0;
+}
+
+.da-rank-li > .process-wrap {
+  position: relative;
+  left: 0;
+  right: 0;
+  height: 6px;
+  border-radius: 2px;
+  background-color: #262b34;
+  overflow: hidden;
+
+}
+
+.da-rank-li > .process-wrap > .process-active {
+  position: absolute;
+  display: inline-block;
+  height: 6px;
+  width: 60%;
+  background-color: @brand-info;
+}
+.da-rank-txt > .no {
+  float: left;
+  font-size: 12px;
+}
+
+.da-rank-txt > .sn {
+  font-size: 12px;
+  margin: 0 0 0 10px;
+
+}
+
+.da-rank-txt > .num {
+  float: right;
+  font-size: 10px;
+}
+
+.da-rank-txt > .num > .num-b {
+  margin-left: 2px;
+  color: @brand-info;
+}
+.circle-bg {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin: auto;
+  width: 200px;
+  height:200px;
+  background:url('../img/co2.png') center/cover no-repeat;
+  //padding-top: 20px;
+  & > #circle {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+}

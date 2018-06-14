@@ -7,7 +7,7 @@ angular.module('app')
            $scope.app = {};
            $scope.app.index = true;
 
-           $scope.$on('index',function (event,data) {
+           $scope.$on('overview',function (event,data) {
                    console.log(data)
                $scope.app.index = data;
            })
