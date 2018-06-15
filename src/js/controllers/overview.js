@@ -4,6 +4,7 @@ angular.module('app')
             $scope.temp = {};
             $scope.temp.warningRadio = '1';
             $scope.temp.viewRadio = '1';
+            $scope.temp.rotate = 50
             var chart = null;
             $.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
                 chart = Highcharts.chart('salary', {
@@ -115,15 +116,15 @@ angular.module('app')
                     ]
                 }]
             });
-            $('#circle').circleProgress({
-                value: 0.5,
-                size: 160,
-                thickness: 30,
-                emptyFill:"rgba(0, 0, 0, 0)",
-                fill: {
-                    gradient: [['rgba(0, 179, 238, 0)',0],['rgba(0, 179, 238, 0.5)',.5],['rgba(0, 179, 238, 1)',1]],
-                    //gradientDirection: ['x0', 'y0', 'x1', 'y1'],
-                    //gradient: ['red', 'green', 'blue'], gradientDirection: [x0, y0, x1, y1]
-                }
-            });
+            // $('#circle').circleProgress({
+            //     value: 0.5,
+            //     size: 160,
+            //     thickness: 30,
+            //     emptyFill:"rgba(0, 0, 0, 0)",
+            //     fill: {
+            //         gradient: [['rgba(0, 179, 238, 0)',0],['rgba(0, 179, 238, 0.5)',.5],['rgba(0, 179, 238, 1)',1]],
+            //         gradientDirection: ['x0', 'y0', 'x1', 'y1'],
+            //         gradient: ['red', 'green', 'blue'], gradientDirection: [x0, y0, x1, y1]
+            //     }
+            // });
         });

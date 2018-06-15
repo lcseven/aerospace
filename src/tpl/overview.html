@@ -8,7 +8,9 @@
     <div class="overview-body c1 animated"
          ng-class="{'fadeInRight':temp.viewRadio === '1',
                       'fadeOutLeft':temp.viewRadio === '2'}">
+                  
         <div class="overview-flt">
+                <div class="h-70"></div>
             <div class="overview-item">
                 <div class="overview-item-header">
                     <i class="iconfont icon-clock"></i>
@@ -89,6 +91,7 @@
             </div>
         </div>
         <div class="overview-frt">
+                <div class="h-70"></div>
             <div class="overview-item" data-name="上海耀阳分布式电站项目">
                 <div class="overview-item-header p-l-lg">
                     <i class="iconfont icon-dashboard"></i>
@@ -96,10 +99,8 @@
                 </div>
                 <div class="overview-item-wrap">
                     <div class="overview-item-content">
-                         <!--<div class="circle-bg">-->
-                             <!--<div id="circle"></div>-->
-                         <!--</div>-->
-
+                         <div class="overview-circle-bg"></div>
+                         <div class="overview-circle-point " style="transform: rotate({{temp.rotate}}deg)"></div>
                     </div>
                 </div>
 
