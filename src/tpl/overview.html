@@ -1,16 +1,14 @@
-
-
 <div class="overview-wrap clear" ng-controller="overViewCtrl">
-    <div class="overview-header">
+    <div class="overview-header" ui-sref="app.index">
         <!--<span class="project">上海耀阳分布式电站项目</span>-->
     </div>
     <!--光伏板块-->
     <div class="overview-body c1 animated"
          ng-class="{'fadeInRight':temp.viewRadio === '1',
                       'fadeOutLeft':temp.viewRadio === '2'}">
-                  
+
         <div class="overview-flt">
-                <div class="h-70"></div>
+            <div class="h-70"></div>
             <div class="overview-item">
                 <div class="overview-item-header">
                     <i class="iconfont icon-clock"></i>
@@ -56,8 +54,10 @@
                 </div>
                 <div class="overview-item-wrap">
                     <div class="overview-item-content">
-                        <p class="salary">今日<i class="text-info iconfont icon-money1  m-r-xs"></i> <span class="text-warning  m-r-sm">888</span>元</p>
-                        <p class="salary">累计<i class="text-info iconfont icon-money1  m-r-xs"></i> <span class="text-warning  m-r-sm">899888</span>元</p>
+                        <p class="salary">今日<i class="text-info iconfont icon-money1  m-r-xs"></i> <span
+                                class="text-warning  m-r-sm">888</span>元</p>
+                        <p class="salary">累计<i class="text-info iconfont icon-money1  m-r-xs"></i> <span
+                                class="text-warning  m-r-sm">899888</span>元</p>
                         <div id="salary" style="width: 100%;height: 150px;"></div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="overview-frt">
-                <div class="h-70"></div>
+            <div class="h-70"></div>
             <div class="overview-item" data-name="上海耀阳分布式电站项目">
                 <div class="overview-item-header p-l-lg">
                     <i class="iconfont icon-dashboard"></i>
@@ -99,8 +99,8 @@
                 </div>
                 <div class="overview-item-wrap">
                     <div class="overview-item-content">
-                         <div class="overview-circle-bg"></div>
-                         <div class="overview-circle-point " style="transform: rotate({{temp.rotate}}deg)"></div>
+                        <div class="overview-circle-bg"></div>
+                        <div class="overview-circle-point " style="transform: rotate({{temp.rotate}}deg)"></div>
                     </div>
                 </div>
 
@@ -114,7 +114,7 @@
                     <div class="overview-item-content">
                         <div class="env-data">
                             <div class="env-img-div">
-                                <img src="src/img/co2.png" class="env-img" alt="env" >
+                                <img src="src/img/co2.png" class="env-img" alt="env">
                             </div>
 
                             <div class="bfc env-bfc">
@@ -126,7 +126,7 @@
                         </div>
                         <div class="env-data">
                             <div class="env-img-div">
-                                <img src="src/img/so2.png" class="env-img" alt="env" >
+                                <img src="src/img/so2.png" class="env-img" alt="env">
                             </div>
 
                             <div class="bfc env-bfc">
@@ -138,7 +138,7 @@
                         </div>
                         <div class="env-data">
                             <div class="env-img-div">
-                                <img src="src/img/tree.png" class="env-img" alt="env" >
+                                <img src="src/img/tree.png" class="env-img" alt="env">
                             </div>
 
                             <div class="bfc env-bfc">
@@ -150,7 +150,7 @@
                         </div>
                         <div class="env-data">
                             <div class="env-img-div">
-                                <img src="src/img/oil.png" class="env-img" alt="env" >
+                                <img src="src/img/oil.png" class="env-img" alt="env">
                             </div>
 
                             <div class="bfc env-bfc">
@@ -176,7 +176,7 @@
                       'fadeOutLeft':temp.warningRadio === '2'}"
                         >
                             <ul class="da-rank-ul">
-                                <li class="da-rank-li " >
+                                <li class="da-rank-li ">
                                     <div class="da-rank-txt">
                                         <span class="no">1</span>
                                         <span class="sn">210107302310HC000315</span>
@@ -185,7 +185,7 @@
                                     <div class="process-wrap">
                                         <span class="process-active" style="width:80%"></span>
                                     </div>
-                                <li class="da-rank-li " >
+                                <li class="da-rank-li ">
                                     <div class="da-rank-txt">
                                         <span class="no">2</span>
                                         <span class="sn">210107302310HC000315</span>
@@ -194,7 +194,7 @@
                                     <div class="process-wrap">
                                         <span class="process-active" style="width:80%"></span>
                                     </div>
-                                <li class="da-rank-li " >
+                                <li class="da-rank-li ">
                                     <div class="da-rank-txt">
                                         <span class="no">3</span>
                                         <span class="sn">210107302310HC000315</span>
@@ -203,7 +203,7 @@
                                     <div class="process-wrap">
                                         <span class="process-active" style="width:80%"></span>
                                     </div>
-                                <li class="da-rank-li " >
+                                <li class="da-rank-li ">
                                     <div class="da-rank-txt">
                                         <span class="no">4</span>
                                         <span class="sn">210107302310HC000315</span>
@@ -212,7 +212,7 @@
                                     <div class="process-wrap">
                                         <span class="process-active" style="width:80%"></span>
                                     </div>
-                                <li class="da-rank-li " >
+                                <li class="da-rank-li ">
                                     <div class="da-rank-txt">
                                         <span class="no">5</span>
                                         <span class="sn">210107302310HC000315</span>
@@ -265,9 +265,9 @@
          ng-class="{'fadeInRight':temp.viewRadio === '2',
                       'fadeOutLeft':temp.viewRadio === '1'}"
     >
-         <div class="overview-flt"></div>
-         <div class="overview-frt"></div>
-         <div class="overview-center"></div>
+        <div class="overview-flt"></div>
+        <div class="overview-frt"></div>
+        <div class="overview-center"></div>
     </div>
     <!--燃气能源end-->
     <p class="radio-wrapper bg">

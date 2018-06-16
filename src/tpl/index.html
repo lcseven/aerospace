@@ -1,0 +1,242 @@
+<div class="index-wrap" ng-controller="indexCtrl">
+    <!--map-->
+    <div class="index-map-bg"
+         ng-click="closeTips()">
+
+    </div>
+    <div class="index-title"></div>
+    <!--电站概览-->
+    <div class="index-item-wrap index-overview-wrap">
+        <div class="p-sm p-b-lg">
+            <h3 class="index-item-head text-white-shadow">
+                <i class="iconfont icon-zifadian"></i>
+                <span class="m-l-sm">电站监控</span>
+            </h3>
+
+            <div class="index-item">
+                <span class="text">总电站数(个)</span>
+                <span class="value">
+                <b class="num">8</b>
+
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text">总装机容量(兆瓦)</span>
+                <span class="value">
+                <b class="num">5685</b>
+
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text">总发电量(度)</span>
+                <span class="value">
+                <b class="num">125896</b>
+
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text">总收益(元)</span>
+                <span class="value">
+                <b class="num">15588</b>
+
+            </span>
+            </div>
+        </div>
+
+    </div>
+    <!--节能环保-->
+    <div class="index-item-wrap index-env-wrap">
+        <div class="p-sm p-b-lg">
+            <h3 class="index-item-head text-white-shadow">
+                <i class="iconfont icon-jienengliang"></i>
+                <span class="m-l-sm">节能环保</span>
+            </h3>
+
+            <div class="index-item">
+                <span class="text">CO<sub>2</sub>减排</span>
+                <span class="value">
+                <b class="num">1558</b>
+                <b class="unit">kg</b>
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text">SO<sub>2</sub>减排</span>
+                <span class="value">
+                <b class="num">1558</b>
+                <b class="unit">kg</b>
+            </span>
+            </div>
+
+            <div class="index-item">
+                <span class="text">节约用油</span>
+                <span class="value">
+                <b class="num">1588</b>
+              <b class="unit">kg</b>
+            </span>
+
+        </div>
+             <div class="index-item">
+            <span class="text">保护森林</span>
+            <span class="value">
+                <b class="num">58</b>
+                    <b class="unit">棵</b>
+               </span>
+             </div>
+        </div>
+    </div>
+    <!--电站列表-->
+    <div class="index-item-wrap index-list-wrap">
+        <div class="p-sm p-b-lg">
+            <h3 class="index-item-head text-white-shadow">
+                <i class="iconfont icon-liebiao"></i>
+                <span class="m-l-sm">电站列表</span>
+            </h3>
+
+            <div class="index-item" ng-click="goView('804')">
+                <span class="text text-white-shadow">804所</span>
+                <span class="value">
+                <b class="num">52.47</b>
+                <b class="unit">kW</b>
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text text-white-shadow">812所</span>
+                <span class="value">
+                <b class="num">93.28</b>
+                <b class="unit">kW</b>
+            </span>
+            </div>
+
+            <div class="index-item">
+                <span class="text text-white-shadow">805所</span>
+                <span class="value">
+                <b class="num">110.77</b>
+                <b class="unit">kW</b>
+            </span>
+            </div>
+
+            <div class="index-item">
+                <span class="text text-white-shadow">149厂</span>
+                <span class="value">
+                <b class="num">240.24</b>
+                <b class="unit">kW</b>
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text text-white-shadow">806所</span>
+                <span class="value">
+                <b class="num">567</b>
+                <b class="unit">kW</b>
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text text-white-shadow">800所</span>
+                <span class="value">
+                <b class="num">938.63</b>
+                <b class="unit">kW</b>
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text text-white-shadow">新力厂</span>
+                <span class="value">
+                <b class="num">1024.9</b>
+                <b class="unit">kW</b>
+            </span>
+            </div>
+            <div class="index-item">
+                <span class="text text-white-shadow">上有厂</span>
+                <span class="value">
+                <b class="num">1980</b>
+                <b class="unit">kW</b>
+            </span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="index-map" >
+        <!--天然气-->
+        <div class="ch-icon ch-1"></div>
+        <!--804所-->
+        <!--闵行区中春路--->
+         <div class="pv-icon pv-804">
+             <input  class="pv-radio" type="radio" name="pv" value="804" ng-model="temp.pvRadio">
+            <div class="pv-tips" ng-click="goView('804')">
+                <p><span>电站名称 : </span><span class="name">804所</span></p>
+                <p><span>装机容量 : </span><span >52.47</span>kW</p>
+                <p><span>电站地址 : </span><span >上海市闵行区中春路1555号</span></p>
+            </div>
+         </div>
+        <!--805所-->
+        <!--闵行区中春路--->
+        <div class="pv-icon pv-805">
+            <input  class="pv-radio" type="radio" name="pv" value="805" ng-model="temp.pvRadio">
+            <div class="pv-tips">
+                <p><span>电站名称 : </span><span class="name">805所</span></p>
+                <p><span>装机容量 : </span><span >110.77</span>kW</p>
+                <p><span>电站地址 : </span><span >上海市闵行区中春路1555号</span></p>
+            </div>
+        </div>
+        <!--806所-->
+        <!--闵行区中春路--->
+        <div class="pv-icon pv-806">
+            <input  class="pv-radio" type="radio" name="pv" value="806" ng-model="temp.pvRadio">
+            <div class="pv-tips">
+                <p><span>电站名称 : </span><span class="name">806所</span></p>
+                <p><span>装机容量 : </span><span >567kW</span></p>
+                <p><span>电站地址 : </span><span >上海市闵行区中春路1555号</span></p>
+            </div>
+        </div>
+        <!--812所-->
+        <!--闵行区华宁路--->
+        <div class="pv-icon pv-812">
+            <input  class="pv-radio" type="radio" name="pv" value="812" ng-model="temp.pvRadio">
+            <div class="pv-tips">
+                <p><span>电站名称 : </span><span class="name">812所</span></p>
+                <p><span>装机容量 : </span><span >93.28kW</span></p>
+                <p><span>电站地址 : </span><span >上海市闵行区华宁路251号</span></p>
+            </div>
+        </div>
+        <!--149-->
+        <!--闵行区华宁路--->
+        <div class="pv-icon pv-149">
+            <input  class="pv-radio" type="radio" name="pv" value="149" ng-model="temp.pvRadio">
+            <div class="pv-tips">
+                <p><span>电站名称 : </span><span class="name">149所</span></p>
+                <p><span>装机容量 : </span><span >240.24kW</span></p>
+                <p><span>电站地址 : </span><span >上海市闵行区华宁路100号</span></p>
+            </div>
+        </div>
+        <!--新力厂-->
+        <!--闵行区召楼路--->
+        <div class="pv-icon pv-xl">
+            <input  class="pv-radio" type="radio" name="pv" value="xl" ng-model="temp.pvRadio">
+            <div class="pv-tips">
+                <p><span>电站名称 : </span><span class="name">新力厂</span></p>
+                <p><span>装机容量 : </span><span >1024.9kW</span></p>
+                <p><span>电站地址 : </span><span >上海市闵行区召楼路3392号</span></p>
+            </div>
+        </div>
+        <!--上有厂-->
+        <!--闵行区召楼路--->
+        <div class="pv-icon pv-sy">
+            <input  class="pv-radio" type="radio" name="pv" value="sy" ng-model="temp.pvRadio">
+            <div class="pv-tips">
+                <p><span>电站名称 : </span><span class="name">上有厂</span></p>
+                <p><span>装机容量 : </span><span >1980kW</span></p>
+                <p><span>电站地址 : </span><span >上海市闵行区召楼路3392号</span></p>
+            </div>
+        </div>
+        <!--800所-->
+        <!--上海市松江区贵德路--->
+        <div class="pv-icon pv-800">
+            <input  class="pv-radio" type="radio" name="pv" value="800" ng-model="temp.pvRadio">
+            <div class="pv-tips">
+                <p><span>电站名称 : </span><span class="name">800所</span></p>
+                <p><span>装机容量 : </span><span >938.63kW</span></p>
+                <p><span>电站地址 : </span><span >上海市松江区贵德路76号</span></p>
+            </div>
+        </div>
+    </div>
+
+</div>

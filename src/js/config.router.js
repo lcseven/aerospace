@@ -10,13 +10,15 @@ angular.module('app')
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
                 $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-
-                    if(toState.name === 'app.overview'){
-
-                        $rootScope.$broadcast('overview',true);
-                    }else {
-                        $rootScope.$broadcast('overview',false);
-                    }
+                   switch (toState.name) {
+                       case 'app.overview':
+                       case 'app.index':
+                           $rootScope.$broadcast('overview',true);
+                           break;
+                       default :
+                           $rootScope.$broadcast('overview',false);
+                           break;
+                   }
                 })
             }
         ]
@@ -55,9 +57,15 @@ angular.module('app')
                         }
 
                     })
-                    .state('app.page2', {
-                        url: '/page2',
-                        templateUrl: 'src/tpl/page2.html'
+                    .state('app.index', {
+                        url: '/index',
+                        templateUrl: 'src/tpl/index.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load('src/js/controllers/index.js');
+                                }]
+                        }
                     })
                     .state('app.page3', {
                         url: '/page3',

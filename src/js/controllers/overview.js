@@ -3,7 +3,7 @@ angular.module('app')
         function ($scope, $location, $state, $localStorage) {
             $scope.temp = {};
             $scope.temp.warningRadio = '1';
-            $scope.temp.viewRadio = '1';
+            $scope.temp.viewRadio = '3';
             $scope.temp.rotate = 50
             var chart = null;
             $.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
