@@ -1594,7 +1594,7 @@
     -webkit-transform: rotate(0deg);
   }
   to { /*动画结束状态*/
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(361deg);
   }
 }
 @keyframes spin {

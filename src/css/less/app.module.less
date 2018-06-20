@@ -11,14 +11,15 @@
     height:1300px;
     padding: 50px 30px;
     box-sizing: border-box;
-    //background-color: #1c2b36;
+
      >.module-list-flt {
        width: 435px;
        height: 100%;
        border-right:15px solid transparent;
 
+
        >.module-list-flt-body {
-         padding-left: 20px;
+         padding:0 15px;
          height: 100%;
          background-color:#112d75 ;
        }
@@ -46,7 +47,7 @@
       font-weight: 100;
 
     }
-    >.module-list-p {
+    .module-list-p {
       line-height:36px;
       font-size: 14px;
       color:#d1d6d8;
@@ -57,3 +58,59 @@
     padding:10px 0 ;
     text-align: center;
   }
+
+.module-list-flt-body {
+  >.equip-img-bg {
+    position: relative;
+    width: 250px;
+    height:250px;
+    margin: 0 auto;
+    background: url(../img/equip-circle.png) center/contain no-repeat;
+    >.success-circle,
+    >.error-circle{
+      position: absolute;
+      top:0;
+      right:0;
+      left:0;
+      bottom:0;
+      margin: auto;
+      width: 250px;
+      height:250px;
+      animation: spin 1.5s linear infinite;
+
+    }
+    >.success-circle {
+      visibility: hidden;
+      background:url(../img/success-circle.png) center/contain no-repeat; ;
+    }
+    >.error-circle {
+      background:url(../img/error-circle.png) center/contain no-repeat; ;
+
+    }
+    >.equip {
+      position: absolute;
+      top:0;
+      right:0;
+      left:0;
+      bottom:0;
+      margin: auto;
+      max-width: 200px;
+      max-height:200px;
+
+    }
+
+  }
+}
+.pv-div {
+   i {
+     font-style: normal;
+   }
+  >.pv-title {
+    display: inline-block;
+    width: 50px;
+  }
+  >.pv-value {
+    display: inline-block;
+    width: 100px;
+  }
+}
