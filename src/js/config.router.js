@@ -9,17 +9,6 @@ angular.module('app')
             function ($rootScope, $state, $stateParams) {
                 $rootScope.$state = $state;
                 $rootScope.$stateParams = $stateParams;
-                $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-                   switch (toState.name) {
-                       case 'app.overview':
-                       case 'app.index':
-                           $rootScope.$broadcast('overview',true);
-                           break;
-                       default :
-                           $rootScope.$broadcast('overview',false);
-                           break;
-                   }
-                })
             }
         ]
     )
@@ -28,25 +17,24 @@ angular.module('app')
         ['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider
-                    .otherwise('/app/overview/');
+                    .otherwise('list');
                 $stateProvider
-                    .state('access', {
-                        url: '/access',
-                        template: '<div ui-view class="fade-in-right-big smooth"></div>'
+                    .state('list', {  //电站列表
+                        url: '/list',
+                        templateUrl: 'src/tpl/index.html?v=201801051554',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load('src/js/controllers/index.js');
+                                }]
+                        }
                     })
-                    .state('access.login', {
-                        url: '/login',
-                        templateUrl: 'src/tpl/login.html?v=201801051554'
-                    })
-                    .state('access.signUp', {
-                        url: '/signUp',
-                        templateUrl: 'src/tpl/signUp.html?v=201801051554'
-                    })
+
                     .state('app', {
                         url: '/app',
                         templateUrl: 'src/tpl/app.html?v=201801051554'
                     })
-                    .state('app.overview', {
+                    .state('app.overview', { //电站概览
                         url: '/overview/:id',
                         templateUrl: 'src/tpl/overview.html',
                         resolve: {
@@ -57,13 +45,23 @@ angular.module('app')
                         }
 
                     })
-                    .state('app.index', {
-                        url: '/index',
-                        templateUrl: 'src/tpl/index.html',
+                    .state('app.moduleList', {  // 组件列表
+                        url: '/moduleList',
+                        templateUrl: 'src/tpl/moduleList.html',
                         resolve: {
                             deps: ['$ocLazyLoad',
                                 function ($ocLazyLoad) {
-                                    return $ocLazyLoad.load('src/js/controllers/index.js');
+                                    return $ocLazyLoad.load('src/js/controllers/moduleList.js');
+                                }]
+                        }
+                    })
+                    .state('app.equipList', {  // 组件列表
+                        url: '/equipList',
+                        templateUrl: 'src/tpl/equipList.html',
+                        resolve: {
+                            deps: ['$ocLazyLoad',
+                                function ($ocLazyLoad) {
+                                    return $ocLazyLoad.load('src/js/controllers/equipList.js');
                                 }]
                         }
                     })

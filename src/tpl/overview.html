@@ -1,27 +1,125 @@
 <div class="overview-wrap clear" ng-controller="overViewCtrl">
-    <div class="overview-header" ui-sref="app.index">
+
+    <!--光伏板块end-->
+    <div class="overview-header" ui-sref="list">
         <!--<span class="project">上海耀阳分布式电站项目</span>-->
     </div>
+    <!--燃气能源-->
+    <div class="overview-body c2 animated"
+         ng-class="{'fadeInRight':temp.viewRadio === '2',
+                      'fadeOutLeft':temp.viewRadio === '1'}"
+    >
+        <div class="overview-flt"></div>
+        <div class="overview-frt"></div>
+        <div class="overview-center"></div>
+    </div>
+    <!--燃气能源end-->
     <!--光伏板块-->
     <div class="overview-body c1 animated"
-         ng-class="{'fadeInRight':temp.viewRadio === '1',
+         ng-class="{'fadeInRight':(temp.viewRadio === '1' && temp.default !=='default'),
                       'fadeOutLeft':temp.viewRadio === '2'}">
 
         <div class="overview-flt">
             <div class="h-70"></div>
+            <div class="overview-item" >
+                <div class="overview-item-header " data-name="上海耀阳分布式电站项目">
+                    <i class="iconfont icon-dashboard"></i>
+                    <span class="text">PR值(系统发电效率)</span>
+                </div>
+                <div class="overview-item-wrap">
+                    <div class="overview-item-content">
+                        <div class="overview-circle-bg"></div>
+                        <div class="overview-circle-point " style="transform: rotate({{temp.rotate}}deg)"></div>
+                        <span class=overview-circle-num><b class="num">89</b><b class="unit">%</b></span>
+                    </div>
+                </div>
+
+            </div>
             <div class="overview-item">
                 <div class="overview-item-header">
+                    <i class="iconfont icon-money"></i>
+                    <span class="text">收益统计</span>
+                </div>
+                <div class="overview-item-wrap">
+                    <div class="overview-item-content">
+                        <p class="salary">今日<i class="iconfont icon-shouyi text-info m-l-xs"></i>
+                            <span class="salary-span">888</span>元</p>
+                        <p class="salary">累计<i class="iconfont icon-shouyi1 text-info m-l-xs"></i>
+                            <span class="salary-span">899888</span>元</p>
+
+                        <img  src="src/img/chart1.png" class="m-t-lg" width="100%" alt="">
+
+                        <!--<div id="salary" style="width: 100%;height: 250px;"></div>-->
+                    </div>
+                </div>
+
+            </div>
+            <div class="overview-item">
+                <div class="overview-item-header">
+                    <i class="iconfont icon-fadiannengli"></i>
+                    <span class="text">功率和发电量</span>
+                </div>
+                <div class="overview-item-wrap">
+                    <div class="overview-item-content bfc">
+                        <div class="radio-control-content animated"
+                             ng-class="{'fadeInRight':(temp.powerRadio === '1'  ),
+                      'fadeOutLeft':temp.powerRadio === '2'}">
+                            <p class="text-center"><span>当前功率:</span><span>1988</span><span>w</span></p>
+                            <div id="power" style="width: 100%; height:250px;">
+
+                            </div>
+                        </div>
+                        <div class="radio-control-content second  animated"
+                             ng-class="{'fadeInRight':(temp.powerRadio === '2'  ),
+                      'fadeOutLeft':temp.powerRadio === '1'}">
+                            <p class="text-center"><span>总发电量:</span><span>9882</span><span>kWh</span></p>
+                            <div id="power0" style="width: 100%; height:250px;">
+
+                            </div>
+                        </div>
+
+                        <p class="radio-wrapper">
+                       <span class="radio-item">
+                            <input class="radio-input"
+                                   type="radio"
+                                   value="1"
+                                   name="power"
+                                   ng-model="temp.powerRadio"
+
+                                   checked>
+                           <label class="radio-label">当前功率</label>
+                       </span>
+                            <span class="radio-item">
+                           <input class="radio-input"
+                                  type="radio"
+                                  value="2"
+                                  ng-model="temp.powerRadio"
+                                  name="power"
+                           >
+                            <label class="radio-label">当前发电量</label>
+                       </span>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="overview-frt">
+            <div class="h-70"></div>
+            <div class="overview-item" data-name="上海耀阳项目">
+                <div class="overview-item-header p-l-lg"  >
                     <i class="iconfont icon-clock"></i>
                     <span class="text">资产管理</span>
                 </div>
                 <div class="overview-item-wrap">
                     <div class="overview-item-content">
                         <ul class="manage-ul">
-                            <li class="manage-li">
+                            <li class="manage-li" ui-sref="app.moduleList">
                                 <h2 class="manage-value">7689988</h2>
                                 <p class="manage-p">组件（个）</p>
                             </li>
-                            <li class="manage-li">
+                            <li class="manage-li" ui-sref="app.equipList">
                                 <h2 class="manage-value">192</h2>
                                 <p class="manage-p">逆变器（个）</p>
                             </li>
@@ -43,64 +141,6 @@
                             </li>
 
                         </ul>
-                    </div>
-                </div>
-
-            </div>
-            <div class="overview-item">
-                <div class="overview-item-header">
-                    <i class="iconfont icon-money"></i>
-                    <span class="text">收益统计</span>
-                </div>
-                <div class="overview-item-wrap">
-                    <div class="overview-item-content">
-                        <p class="salary">今日<i class="text-info iconfont icon-money1  m-r-xs"></i> <span
-                                class="text-warning  m-r-sm">888</span>元</p>
-                        <p class="salary">累计<i class="text-info iconfont icon-money1  m-r-xs"></i> <span
-                                class="text-warning  m-r-sm">899888</span>元</p>
-                        <div id="salary" style="width: 100%;height: 150px;"></div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="overview-item">
-                <div class="overview-item-header">
-                    <i class="iconfont icon-fadiannengli"></i>
-                    <span class="text">功率和发电量</span>
-                </div>
-                <div class="overview-item-wrap">
-                    <div class="overview-item-content">
-                        <p class="text-center"><span>当前功率:</span><span>1988</span><span>瓦</span></p>
-                        <div id="power" style="width: 100%; height:180px;">
-
-                        </div>
-                        <p class="radio-wrapper">
-                       <span class="radio-item">
-                            <input class="radio-input" type="radio" value="1" name="power" checked>
-                           <label class="radio-label">当前功率</label>
-                       </span>
-                            <span class="radio-item">
-                           <input class="radio-input" type="radio" value="1" name="power">
-                            <label class="radio-label">当前发电量</label>
-                       </span>
-
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="overview-frt">
-            <div class="h-70"></div>
-            <div class="overview-item" data-name="上海耀阳分布式电站项目">
-                <div class="overview-item-header p-l-lg">
-                    <i class="iconfont icon-dashboard"></i>
-                    <span class="text">PR值(系统发电效率)</span>
-                </div>
-                <div class="overview-item-wrap">
-                    <div class="overview-item-content">
-                        <div class="overview-circle-bg"></div>
-                        <div class="overview-circle-point " style="transform: rotate({{temp.rotate}}deg)"></div>
                     </div>
                 </div>
 
@@ -172,7 +212,7 @@
                 <div class="overview-item-wrap">
                     <div class="overview-item-content bfc">
                         <div class="radio-control-content animated"
-                             ng-class="{'fadeInRight':temp.warningRadio === '1',
+                             ng-class="{'fadeInRight':(temp.warningRadio === '1'  ),
                       'fadeOutLeft':temp.warningRadio === '2'}"
                         >
                             <ul class="da-rank-ul">
@@ -230,7 +270,7 @@
                       'fadeOutLeft':temp.warningRadio === '1'}"
 
                         >
-                            <div id="warning" style="width: 100%;height: 200px;"></div>
+                            <div id="warning" style="width: 100%;height: 280px;"></div>
                         </div>
                         <p class="radio-wrapper">
                        <span class="radio-item">
@@ -257,19 +297,14 @@
 
             </div>
         </div>
-        <div class="overview-center">2</div>
+        <div class="overview-center">
+            <div class="house-bg">
+                <!--<div id="button" style="width: 200px;cursor:pointer;">点击导出</div>-->
+            </div>
+        </div>
     </div>
-    <!--光伏板块end-->
-    <!--燃气能源-->
-    <div class="overview-body c2 animated"
-         ng-class="{'fadeInRight':temp.viewRadio === '2',
-                      'fadeOutLeft':temp.viewRadio === '1'}"
-    >
-        <div class="overview-flt"></div>
-        <div class="overview-frt"></div>
-        <div class="overview-center"></div>
-    </div>
-    <!--燃气能源end-->
+
+    <!--view切换-->
     <p class="radio-wrapper bg">
                        <span class="radio-item">
                             <input class="radio-input"
@@ -277,16 +312,22 @@
                                    value="1"
                                    name="view"
                                    ng-model="temp.viewRadio"
+                                   ng-change="changDefault(1)"
                             >
-                           <label class="radio-label body1">1</label>
+                           <i class="radio-i iconfont icon-photovoltaic"
+                              ng-class="{'active':temp.viewRadio === 'default' || temp.viewRadio == '1' }"
+                           ></i>
                        </span>
         <span class="radio-item">
                            <input class="radio-input"
                                   type="radio"
                                   value="2"
                                   ng-model="temp.viewRadio"
+                                  ng-change="changDefault(2)"
                                   name="view">
-                            <label class="radio-label body2">2</label>
+                            <i class="radio-i iconfont icon-ranqi"
+                               ng-class="{'active':temp.viewRadio == '2' }"
+                            ></i>
                        </span>
 
     </p>

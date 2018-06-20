@@ -3,84 +3,87 @@ angular.module('app')
         function ($scope, $location, $state, $localStorage) {
             $scope.temp = {};
             $scope.temp.warningRadio = '1';
-            $scope.temp.viewRadio = '3';
-            $scope.temp.rotate = 50
-            var chart = null;
-            $.getJSON('https://data.jianshukeji.com/jsonp?filename=json/usdeur.json&callback=?', function (data) {
-                chart = Highcharts.chart('salary', {
-                    chart: {
-                        zoomType: 'x'
-                    },
-                    title: {
-                        text: ''
-                    },
-                    xAxis: {
-                        type: 'datetime',
-                        dateTimeLabelFormats: {
-                            millisecond: '%H:%M:%S.%L',
-                            second: '%H:%M:%S',
-                            minute: '%H:%M',
-                            hour: '%H:%M',
-                            day: '%m-%d',
-                            week: '%m-%d',
-                            month: '%Y-%m',
-                            year: '%Y'
-                        }
-                    },
-                    tooltip: {
-                        dateTimeLabelFormats: {
-                            millisecond: '%H:%M:%S.%L',
-                            second: '%H:%M:%S',
-                            minute: '%H:%M',
-                            hour: '%H:%M',
-                            day: '%Y-%m-%d',
-                            week: '%m-%d',
-                            month: '%Y-%m',
-                            year: '%Y'
-                        }
-                    },
-                    yAxis: {
-                        title: {
-                            text: '汇率'
-                        }
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    plotOptions: {
-                        area: {
-                            fillColor: {
-                                linearGradient: {
-                                    x1: 0,
-                                    y1: 0,
-                                    x2: 0,
-                                    y2: 1
-                                },
-                                stops: [
-                                    [0, Highcharts.getOptions().colors[0]],
-                                    [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                                ]
-                            },
-                            marker: {
-                                radius: 2
-                            },
-                            lineWidth: 1,
-                            states: {
-                                hover: {
-                                    lineWidth: 1
-                                }
-                            },
-                            threshold: null
-                        }
-                    },
-                    series: [{
-                        type: 'area',
-                        name: '美元兑欧元',
-                        data: data
-                    }]
-                });
-            });
-            var chart1 = Highcharts.chart('warning', {
+            $scope.temp.powerRadio = '1';
+            $scope.temp.viewRadio = 'default';
+            $scope.temp.default = 'default';
+            $scope.changDefault = function (flag) {
+                if($scope.temp.default === 'default'  && flag === 1 ){
+                    $scope.temp.default = 'default'
+                }else {
+                    $scope.temp.default = '1';
+                }
+
+            }
+            $scope.temp.rotate = 50;
+
+
+
+
+
+             var chart = Highcharts.chart('power', {
+                 chart: {
+                     type: 'area'
+                 },
+                 title: {
+                     text: ''
+                 },
+                 xAxis: {
+                     categories: [
+                         '6:00','7:00','8:00','9:00','10:00','11:00','12:00','13:00'
+                     ],
+                 },
+                 yAxis: {
+                     title: {
+                         text: '功率（W）'
+                     }
+                 },
+                 tooltip: {
+                     valueSuffix: ' W'
+                 },
+                 plotOptions: {
+                     area: {
+                         fillOpacity: 0.5
+                     }
+                 },
+                 series: [{
+                     name: '804',
+                     lineWidth: 1,
+                     marker: {
+                         fillColor: 'rgba(0,0,0,0)',
+                         lineWidth: 0,
+                         //lineColor: null // inherit from series
+                     },
+                     data: [1234, 2546, 4678, 5764, 8900, 16345, 20566]
+                 }]
+             });
+
+             var chart0 =  Highcharts.chart('power0', {
+                 chart: {
+                     type: 'column'
+                 },
+                 title: {
+                     text: ''
+                 },
+                 xAxis: {
+                     categories: [
+                         '6:00','7:00','8:00','9:00','10:00','11:00','12:00','13:00'
+                     ],
+                 },
+                 yAxis: {
+                     title: {
+                         text: '发电量（kWh）'
+                     }
+                 },
+                 tooltip: {
+                     valueSuffix: ' kWh'
+                 },
+                 series: [{
+                     name: '804',
+                     data: [1234, 2546, 4678, 5764, 8900, 16345, 20566]
+                 }]
+             });
+
+             var chart1 = Highcharts.chart('warning', {
                 title: {
                     text: ''
                 },
@@ -116,15 +119,5 @@ angular.module('app')
                     ]
                 }]
             });
-            // $('#circle').circleProgress({
-            //     value: 0.5,
-            //     size: 160,
-            //     thickness: 30,
-            //     emptyFill:"rgba(0, 0, 0, 0)",
-            //     fill: {
-            //         gradient: [['rgba(0, 179, 238, 0)',0],['rgba(0, 179, 238, 0.5)',.5],['rgba(0, 179, 238, 1)',1]],
-            //         gradientDirection: ['x0', 'y0', 'x1', 'y1'],
-            //         gradient: ['red', 'green', 'blue'], gradientDirection: [x0, y0, x1, y1]
-            //     }
-            // });
+
         });

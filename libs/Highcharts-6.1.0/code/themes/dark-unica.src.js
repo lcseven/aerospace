@@ -44,7 +44,7 @@
 		    title: {
 		        style: {
 		            color: '#E0E0E3',
-		            textTransform: 'uppercase',
+		            //textTransform: 'uppercase',
 		            fontSize: '14px'
 		        }
 		    },
@@ -52,7 +52,7 @@
 		    	text: '',
 		        style: {
 		            color: '#E0E0E3',
-		            textTransform: 'uppercase'
+		            //textTransform: 'uppercase'
 		        }
 		    },
 		    xAxis: {
@@ -87,7 +87,9 @@
 		        tickWidth: 1,
 		        title: {
 		            style: {
-		                color: '#A0A0A3'
+		                color: '#E0E0E3',
+						fontSize:'10px'
+
 		            }
 		        }
 		    },
@@ -99,6 +101,7 @@
 		    },
 		    plotOptions: {
 		        series: {
+                    borderWidth: 0,
 		            dataLabels: {
 		                color: '#B0B0B3'
 		            },
